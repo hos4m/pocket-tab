@@ -9,16 +9,8 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
 
-  <body>
+  <body class="p-8">
     <div include-html="partials/header.html"></div>
-
-    <div x-data="{ open: false }">
-      <button @click="open = true">Open Dropdown</button>
-
-      <ul x-show="open" @click.away="open = false">
-        Dropdown Body
-      </ul>
-    </div>
 
     <script src="./index.mjs" type="module" defer></script>
   </body>
