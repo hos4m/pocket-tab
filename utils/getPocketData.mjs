@@ -1,4 +1,4 @@
-import pocketConsumerKey from "../configs/pocketConsumerKey.mjs";
+import { pocketConsumerKey } from "../configs/keys.mjs";
 
 export default async function getPocketData() {
   const base = "https://getpocket.com/v3";
