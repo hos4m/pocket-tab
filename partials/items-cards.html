@@ -1,0 +1,14 @@
+<div class="my-8" x-data="{ list: window.list }">
+    <template x-if="!list || list.length === 0">
+      <div>No items to show!</div>
+    </template>
+
+    <template x-if="list && list.length > 0">
+      <template x-for="item in list" :key="item">
+        <div>
+          <a x-text="item.given_title || item.resolved_title" x-bind:href="item.resolved_url" target="_blank" rel=”noopener noreferrer”></a>
+        </div>
+      </template>
+    </template>
+  </div>
+</div>
