@@ -1,14 +1,31 @@
-<div class="my-8" x-data="{ list: window.list }">
-    <template x-if="!list || list.length === 0">
-      <div>No items to show!</div>
-    </template>
+<div class="my-8" x-data="{ list: window.pockettab.list, formatDate: window.pockettab.formatDate }">
+  <template x-if="!list || list.length === 0">
+    <div>No items to show!</div>
+  </template>
 
-    <template x-if="list && list.length > 0">
+  <template x-if="list && list.length > 0">
+    <div class="flex flex-wrap justify-between">
       <template x-for="item in list" :key="item">
-        <div>
-          <a x-text="item.given_title || item.resolved_title" x-bind:href="item.resolved_url" target="_blank" rel=”noopener noreferrer”></a>
+        <div class="max-w-sm rounded overflow-hidden bg-gray-200 shadow-inner mb-4 flex-grow">
+          <div class="px-6 py-4">
+            <span
+              class="inline-block bg-gray-300 rounded-full px-3 py-1 text-xs font-semibold text-gray-700"
+              x-text="formatDate(item.time_added)"
+            >
+            </span>
+          </div>
+          <div class="px-6 py-4 pt-0">
+            <a
+              class="font-bold text-xl mb-2"
+              x-text="item.given_title || item.resolved_title"
+              x-bind:href="item.resolved_url"
+              target="_blank"
+              rel="”noopener"
+              noreferrer”
+            ></a>
+          </div>
         </div>
       </template>
-    </template>
-  </div>
+    </div>
+  </template>
 </div>
