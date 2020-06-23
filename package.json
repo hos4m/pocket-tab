@@ -1,7 +1,7 @@
 {
   "name": "pocket-tab",
   "version": "1.0.0",
-  "description": "A new tab Chrome extension for the getpocket service",
+  "description": "A new tab Chrome extension for the Pocket service",
   "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
