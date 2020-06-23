@@ -17,8 +17,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/hos4m/pocket-tab"
-  },
-  "dependencies": {
-    "alpinejs": "^2.4.1"
   }
 }

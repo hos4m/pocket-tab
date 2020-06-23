@@ -1,1 +1,1 @@
-import "./node_modules/alpinejs/dist/alpine.js";
+import "https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.4.1/dist/alpine.min.js";
