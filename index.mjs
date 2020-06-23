@@ -14,5 +14,9 @@ import formatDate from "./utils/formatDate.js";
   const list = Object.values(pocketData.list);
   window.pockettab.list = orderList({ list });
 
+  console.log("----------------------------");
+  console.log(window.pockettab.list);
+  console.log("----------------------------");
+
   includeHTML();
 })();

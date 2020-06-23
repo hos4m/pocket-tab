@@ -6,12 +6,22 @@
   <template x-if="list && list.length > 0">
     <div class="flex flex-wrap justify-between">
       <template x-for="item in list" :key="item">
-        <div class="max-w-sm rounded overflow-hidden bg-gray-200 shadow-inner mb-4 flex-grow">
-          <div class="px-6 py-4">
+        <div class="max-w-sm rounded overflow-hidden bg-gray-200 shadow-inner mb-8 flex-grow">
+          <div class="px-6 py-4 flex justify-between">
             <span
-              class="inline-block bg-gray-300 rounded-full px-3 py-1 text-xs font-semibold text-gray-700"
+              class="bg-gray-300 rounded-full px-3 py-1 text-xs font-semibold text-gray-700"
               x-text="formatDate(item.time_added)"
             >
+            </span>
+            <span class="flex">
+              <template x-if="item.is_article > 0">
+                <img src="../assets/file.svg" alt="video" />
+              </template>
+              <template
+                x-if="item.has_video > 0 || item.resolved_url.includes('youtu') || item.resolved_url.includes('youtube')"
+              >
+                <img src="../assets/video.svg" alt="video" />
+              </template>
             </span>
           </div>
           <div class="px-6 py-4 pt-0">
