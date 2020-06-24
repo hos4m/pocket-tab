@@ -4,9 +4,11 @@
   </template>
 
   <template x-if="list && list.length > 0">
-    <div class="flex flex-wrap justify-between">
+    <div class="flex flex-wrap">
       <template x-for="item in list" :key="item">
-        <div class="max-w-sm rounded overflow-hidden bg-gray-200 shadow-inner mb-8 flex-grow">
+        <div
+          class="max-w-sm rounded overflow-hidden bg-gray-200 shadow-inner ml-0 mr-4 mb-4 flex-grow"
+        >
           <div class="px-6 py-4 flex justify-between">
             <span
               class="bg-gray-300 rounded-full px-3 py-1 text-xs font-semibold text-gray-700"
