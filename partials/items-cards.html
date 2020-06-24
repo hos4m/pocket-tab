@@ -17,12 +17,12 @@
             </span>
             <span class="flex">
               <template x-if="item.is_article > 0">
-                <img src="../assets/file.svg" alt="video" />
+                <img src="../assets/file.svg" alt="is an article" title="is an article" />
               </template>
               <template
                 x-if="item.has_video > 0 || item.resolved_url.includes('youtu') || item.resolved_url.includes('youtube')"
               >
-                <img src="../assets/video.svg" alt="video" />
+                <img src="../assets/video.svg" alt="contains video" title="contains video" />
               </template>
             </span>
           </div>
