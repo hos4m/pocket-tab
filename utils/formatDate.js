@@ -1,4 +1,4 @@
-export default function (timestamp) {
+window.pockettab.formatDate = function (timestamp) {
   return new Date(timestamp * 1000)
     .toLocaleDateString("en-GB", {
       day: "numeric",
@@ -7,4 +7,4 @@ export default function (timestamp) {
     })
     .split(" ")
     .join(" ");
-}
+};

@@ -1,4 +1,11 @@
-<div class="my-8" x-data="{ list: window.pockettab.list, formatDate: window.pockettab.formatDate }">
+<div
+  class="my-8"
+  x-data="{
+    list: window.pockettab.list,
+    formatDate: window.pockettab.formatDate,
+    modifyItems: window.pockettab.modifyItems
+  }"
+>
   <template x-if="!list || list.length === 0">
     <div>No items to show!</div>
   </template>
@@ -29,11 +36,11 @@
           <div class="px-6 py-4 pt-0">
             <a
               class="font-bold text-xl mb-2"
+              target="_blank"
+              rel="noopener noreferrer"
               x-text="item.given_title || item.resolved_title"
               x-bind:href="item.resolved_url"
-              target="_blank"
-              rel="”noopener"
-              noreferrer”
+              x-on:click="modifyItems({ itemId: item.item_id, action: 'archive' })"
             ></a>
           </div>
         </div>
