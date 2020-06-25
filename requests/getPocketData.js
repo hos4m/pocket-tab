@@ -51,7 +51,7 @@ export default async function getPocketData() {
   if (accessTokenLS) {
     try {
       const response = await fetch(
-        `${base}/get?consumer_key=${consumer_key}&access_token=${accessTokenLS}`,
+        `${base}/get?detailType="complete"&consumer_key=${consumer_key}&access_token=${accessTokenLS}`,
         {
           method: "post",
         }

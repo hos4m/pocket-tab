@@ -14,8 +14,23 @@
     <div class="flex flex-wrap">
       <template x-for="item in list" :key="item">
         <div
-          class="max-w-sm rounded overflow-hidden bg-gray-200 shadow-inner ml-0 mr-4 mb-4 flex-grow"
+          class="max-w-sm rounded overflow-hidden bg-gray-200 shadow-inner mr-4 mb-4"
+          style="flex: 0 0 23%;"
         >
+          <a
+            class="font-bold text-xl mb-2"
+            target="_blank"
+            rel="noopener noreferrer"
+            x-bind:href="item.resolved_url"
+            x-on:click="modifyItems({ itemId: item.item_id, action: 'archive' })"
+          >
+            <img
+              class="h-32 w-full object-cover"
+              x-bind:alt="item.given_title || item.resolved_title"
+              x-bind:src="item.top_image_url || `${window.origin}/assets/default-image.jpg`"
+              onerror="this.src=`${window.origin}/assets/default-image.jpg`"
+            />
+          </a>
           <div class="px-6 py-4 flex justify-between">
             <span
               class="bg-gray-300 rounded-full px-3 py-1 text-xs font-semibold text-gray-700"
@@ -35,7 +50,7 @@
           </div>
           <div class="px-6 py-4 pt-0">
             <a
-              class="font-bold text-xl mb-2"
+              class="font-bold text-md mb-2"
               target="_blank"
               rel="noopener noreferrer"
               x-text="item.given_title || item.resolved_title"
