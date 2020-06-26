@@ -23,5 +23,6 @@ window.pockettab.modifyItems = async function ({ itemId, action }) {
 
   if (!response.ok) {
     alert("An error happened! try again later.");
+    window.location.reload();
   }
 };

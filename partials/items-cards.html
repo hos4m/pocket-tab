@@ -22,7 +22,10 @@
             target="_blank"
             rel="noopener noreferrer"
             x-bind:href="item.resolved_url"
-            x-on:click="modifyItems({ itemId: item.item_id, action: 'archive' })"
+            x-on:click="
+              modifyItems({ itemId: item.item_id, action: 'archive' })
+              list = list.filter(s => s.item_id != item.item_id)
+            "
           >
             <img
               class="h-32 w-full object-cover"
@@ -55,7 +58,10 @@
               rel="noopener noreferrer"
               x-text="item.given_title || item.resolved_title"
               x-bind:href="item.resolved_url"
-              x-on:click="modifyItems({ itemId: item.item_id, action: 'archive' })"
+              x-on:click="
+                modifyItems({ itemId: item.item_id, action: 'archive' })
+                list = list.filter(s => s.item_id != item.item_id)
+              "
             ></a>
           </div>
         </div>
